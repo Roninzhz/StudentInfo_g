@@ -35,6 +35,7 @@ namespace StudentInfo
 
         protected void shuxin_Click(object sender, EventArgs e)
         {
+            //刷新验证码
             Image.ImageUrl = "~/CheckCode.aspx";
         }
     }

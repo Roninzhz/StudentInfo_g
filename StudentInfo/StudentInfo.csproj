@@ -60,6 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CheckCode.aspx" />
+    <Content Include="CourseAdd.aspx" />
+    <Content Include="CourseFind.aspx" />
+    <Content Include="CourseScore.aspx" />
+    <Content Include="CourseSelect.aspx" />
     <Content Include="fonts\iconfont.eot" />
     <Content Include="fonts\iconfont.ttf" />
     <Content Include="fonts\iconfont.woff" />
@@ -194,6 +198,13 @@
     <Content Include="lib\layui\lay\modules\upload.js" />
     <Content Include="lib\layui\lay\modules\util.js" />
     <Content Include="Login.aspx" />
+    <Content Include="NewsList.aspx" />
+    <Content Include="NewsManage.aspx" />
+    <Content Include="NewsShow.aspx" />
+    <Content Include="PasswordMod.aspx" />
+    <Content Include="StudentAdd.aspx" />
+    <Content Include="StudentFind.aspx" />
+    <Content Include="StudentInfo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +214,34 @@
     </Compile>
     <Compile Include="CheckCode.aspx.designer.cs">
       <DependentUpon>CheckCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseAdd.aspx.cs">
+      <DependentUpon>CourseAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseAdd.aspx.designer.cs">
+      <DependentUpon>CourseAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseFind.aspx.cs">
+      <DependentUpon>CourseFind.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseFind.aspx.designer.cs">
+      <DependentUpon>CourseFind.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseScore.aspx.cs">
+      <DependentUpon>CourseScore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseScore.aspx.designer.cs">
+      <DependentUpon>CourseScore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseSelect.aspx.cs">
+      <DependentUpon>CourseSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseSelect.aspx.designer.cs">
+      <DependentUpon>CourseSelect.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -218,7 +257,56 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewsList.aspx.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsList.aspx.designer.cs">
+      <DependentUpon>NewsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsManage.aspx.cs">
+      <DependentUpon>NewsManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsManage.aspx.designer.cs">
+      <DependentUpon>NewsManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsShow.aspx.cs">
+      <DependentUpon>NewsShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsShow.aspx.designer.cs">
+      <DependentUpon>NewsShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordMod.aspx.cs">
+      <DependentUpon>PasswordMod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordMod.aspx.designer.cs">
+      <DependentUpon>PasswordMod.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentAdd.aspx.cs">
+      <DependentUpon>StudentAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentAdd.aspx.designer.cs">
+      <DependentUpon>StudentAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentFind.aspx.cs">
+      <DependentUpon>StudentFind.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentFind.aspx.designer.cs">
+      <DependentUpon>StudentFind.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentInfo.aspx.cs">
+      <DependentUpon>StudentInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentInfo.aspx.designer.cs">
+      <DependentUpon>StudentInfo.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
