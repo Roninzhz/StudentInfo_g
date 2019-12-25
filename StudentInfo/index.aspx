@@ -65,7 +65,8 @@
             </ul>
             <ul class="layui-nav right">
                 <li class="layui-nav-item">
-                    <a href="javascript:;">admin</a>
+                    <a href="javascript:;">
+                        <asp:Label ID="ltCurUser" runat="server"></asp:Label></a>
                     <dl class="layui-nav-child">
                         <!-- 二级菜单 -->
                         <dd>

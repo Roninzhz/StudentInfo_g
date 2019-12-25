@@ -17,19 +17,20 @@
     <script src="./lib/layui/layui.js" charset="utf-8"></script>
 </head>
 <body class="login-bg">
-      <div class="login layui-anim layui-anim-up">
-        <div class="message">管理登录</div>
+    <div class="login layui-anim layui-anim-up">
+        <div class="message">用户登录</div>
         <div id="darkbannerwrap"></div>
 
         <form method="post" class="layui-form" runat="server">
-            <input name="username" placeholder="用户名" type="text" lay-verify="required" class="layui-input" id="user_name" runat="server"/>
+            <input name="username" placeholder="用户名" type="text" lay-verify="required" class="layui-input" id="user_name" runat="server" />
             <hr class="hr15" />
-            <input name="password" lay-verify="required" placeholder="密码" type="password" class="layui-input" id="pass_word" runat="server"/>
+            <input name="password" lay-verify="required" placeholder="密码" type="password" class="layui-input" id="pass_word" runat="server" />
             <hr class="hr15" />
-             <input name="code" lay-verify="required" placeholder="验证码" class="layui-input" id="CheckCode" runat="server" style="width:200px"/>
-            <div style="position:relative;left:200px;top:-50px;">
-                <asp:Image ID="Image" runat="server" ImageUrl="~/CheckCode.aspx" Width="100px" Height="40px"/><br /><br />
-                <asp:LinkButton ID="shuxin" runat="server" OnClick="shuxin_Click">点击刷新验证码</asp:LinkButton>
+            <input name="code" lay-verify="required" placeholder="验证码" class="layui-input" id="CheckCode" runat="server" style="width: 200px" />
+            <div style="position: relative; left: 200px; top: -50px;">
+                <asp:Image ID="Image" runat="server" ImageUrl="~/CheckCode.aspx" Width="100px" Height="40px" /><br />
+                <br />
+                <asp:Label ID="shuaxin" runat="server" Text="看不清，单击验证码换一张"></asp:Label>
             </div>
             <hr class="hr15" />
             <asp:Button ID="btnsubmit" runat="server" Text="登录" OnClick="btnsubmit_Click" />
@@ -37,5 +38,10 @@
         </form>
     </div>
     <!-- 底部结束 -->
+    <script type="text/javascript">
+        $("#Image").click(function () {
+            $(this).attr("src", "CheckCode.aspx?code=" + (new Date()).getTime());
+        });
+    </script>
 </body>
 </html>
