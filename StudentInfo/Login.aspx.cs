@@ -25,7 +25,7 @@ namespace StudentInfo
             IList<admin_userEntity> users = dALadmin_User.Getadmin_usersbyCondition("userName='" + username + "' and userPassword='" + password + "'");
             if (users.Count > 0&& cookie.Value == CheckCode.Value)
             {
-                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登录');location.href='index.aspx';</script>");
+                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登录成功');location.href='index.aspx';</script>");
             }
             else
             {
