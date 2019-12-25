@@ -15,7 +15,7 @@ namespace DBUtility
     public abstract class SQLHelper
     {
         //数据库连接
-        public static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["rxzz"].ConnectionString;
+        public static readonly string ConnectionString = ConfigurationManager.ConnectionStrings["SMDB"].ConnectionString;
 
         // Hashtable to store cached parameters
         private static Hashtable parmCache = Hashtable.Synchronized(new Hashtable());
