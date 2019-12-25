@@ -25,16 +25,12 @@ namespace StudentInfo
             IList<admin_userEntity> users = dALadmin_User.Getadmin_usersbyCondition("userName='" + username + "' and userPassword='" + password + "'");
             if (users.Count > 0&& cookie.Value == CheckCode.Value)
             {
-                this.Page.RegisterStartupScript("", "<script>alert('登陆成功！');</script>");
+                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登录');location.href='index.aspx';</script>");
             }
             else
             {
-                this.Page.RegisterStartupScript("", "<script>alert('登陆失败！');</script>");
+                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名或密码或验证码错误');</script>");
             }
-            //if (cookie.Value == txtCheckCode.Text)
-            //    ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('注册成功');location.href='Login.aspx';</script>");
-            //else
-            //    ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('验证码错误');</script>");
         }
 
         protected void shuxin_Click(object sender, EventArgs e)
