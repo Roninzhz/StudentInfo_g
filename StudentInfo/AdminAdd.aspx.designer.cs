@@ -11,70 +11,61 @@ namespace StudentInfo
 {
 
 
-    public partial class Login
+    public partial class AdminAdd
     {
 
         /// <summary>
-        /// user_name 控件。
+        /// username 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText user_name;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
 
         /// <summary>
-        /// pass_word 控件。
+        /// L_pass 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword pass_word;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword L_pass;
 
         /// <summary>
-        /// CheckCode 控件。
+        /// L_repass 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText CheckCode;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword L_repass;
 
         /// <summary>
-        /// Image 控件。
+        /// Comparepass 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image;
+        protected global::System.Web.UI.WebControls.CompareValidator Comparepass;
 
         /// <summary>
-        /// shuaxin 控件。
+        /// phone 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label shuaxin;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText phone;
 
         /// <summary>
-        /// btnsubmit 控件。
+        /// btnsave 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsubmit;
-
-        /// <summary>
-        /// btnsubmit1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsubmit1;
+        protected global::System.Web.UI.WebControls.Button btnsave;
     }
 }

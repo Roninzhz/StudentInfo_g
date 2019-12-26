@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/xadmin.css" />
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="./lib/layui/layui.js" charset="utf-8"></script>
-</head>
+    </head>
 <body class="login-bg">
     <div class="login layui-anim layui-anim-up">
         <div class="message">用户登录</div>
@@ -33,7 +33,9 @@
                 <asp:Label ID="shuaxin" runat="server" Text="看不清，单击验证码换一张"></asp:Label>
             </div>
             <hr class="hr15" />
-            <asp:Button ID="btnsubmit" runat="server" Text="登录" OnClick="btnsubmit_Click" />
+            <asp:Button ID="btnsubmit" runat="server" Text="教师登录" OnClick="btnsubmit_Click" Width="150px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnsubmit1" runat="server" Text="学生登录" Width="150px" OnClick="btnsubmit1_Click"/>
             <hr class="hr20" />
         </form>
     </div>

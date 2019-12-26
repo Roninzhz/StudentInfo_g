@@ -30,15 +30,24 @@ namespace StudentInfo
                 Session["uName"] = "你好，管理员："+username;
                 ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登录成功');location.href='index.aspx';</script>");
             }
-            //else
-            //{
-            //    ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名或密码或验证码错误');</script>");
-            //}
-            //else if (students.Count > 0 && cookie.Value == CheckCode.Value)
-            //{
-            //    Session["uName"] = "你好，学生：" + username;
-            //    ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登录成功');location.href='index.aspx';</script>");
-            //}
+            else
+            {
+                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名或密码或验证码错误');</script>");
+            }
+        }
+
+        protected void btnsubmit1_Click(object sender, EventArgs e)
+        {
+            HttpCookie cookie = Request.Cookies["CheckCode"];
+            string username = user_name.Value;
+            string password = pass_word.Value;
+            SQLDAL.DALstudent_info dALstudent_Info = new DALstudent_info();
+            IList<student_infoEntity> students = dALstudent_Info.Getstudent_infosbyCondition("studentName='" + username + "' and StudentPassword='" + password + "'");
+            if (students.Count> 0 && cookie.Value == CheckCode.Value)
+            {
+                Session["uName"] = "学生：" + username;
+                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登录成功');location.href='index.aspx';</script>");
+            }
             else
             {
                 ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名或密码或验证码错误');</script>");
