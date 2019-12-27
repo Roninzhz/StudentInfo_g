@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminAdd.aspx" />
+    <Content Include="AdminEdit.aspx" />
     <Content Include="AdminList.aspx" />
     <Content Include="CheckCode.aspx" />
     <Content Include="CourseAdd.aspx" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="AdminAdd.aspx.designer.cs">
       <DependentUpon>AdminAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEdit.aspx.cs">
+      <DependentUpon>AdminEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminEdit.aspx.designer.cs">
+      <DependentUpon>AdminEdit.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminList.aspx.cs">
       <DependentUpon>AdminList.aspx</DependentUpon>

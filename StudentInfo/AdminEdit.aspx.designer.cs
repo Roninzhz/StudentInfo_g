@@ -11,43 +11,61 @@ namespace StudentInfo
 {
 
 
-    public partial class AdminList
+    public partial class AdminEdit
     {
 
         /// <summary>
-        /// select 控件。
+        /// username 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText select;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
 
         /// <summary>
-        /// btnselect 控件。
+        /// L_pass 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnselect;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword L_pass;
 
         /// <summary>
-        /// grdadmin 控件。
+        /// L_repass 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdadmin;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword L_repass;
 
         /// <summary>
-        /// Sqladmin 控件。
+        /// Comparepass 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Sqladmin;
+        protected global::System.Web.UI.WebControls.CompareValidator Comparepass;
+
+        /// <summary>
+        /// phone 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText phone;
+
+        /// <summary>
+        /// btnsave 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnsave;
     }
 }
