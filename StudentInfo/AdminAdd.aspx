@@ -28,7 +28,7 @@
                         <span class="x-red">*</span>登录名
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="username" name="username" required="" lay-verify="required"
+                        <input type="text" id="username" name="username" lay-verify="required"
                             autocomplete="off" class="layui-input" runat="server">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
@@ -40,7 +40,7 @@
                         <span class="x-red">*</span>密码
                     </label>
                     <div class="layui-input-inline">
-                        <input type="password" id="L_pass" name="pass" required="" lay-verify="pass"
+                        <input type="password" id="L_pass" name="pass" lay-verify="pass"
                             autocomplete="off" class="layui-input" runat="server">
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         <span class="x-red">*</span>确认密码
                     </label>
                     <div class="layui-input-inline">
-                        <input type="password" id="L_repass" name="repass" required="" lay-verify="repass"
+                        <input type="password" id="L_repass" name="repass" lay-verify="repass"
                             autocomplete="off" class="layui-input" runat="server">
                     </div>
                     <asp:CompareValidator ID="Comparepass" runat="server" ErrorMessage="*两次密码输入不一致" ControlToValidate="L_pass" ControlToCompare="L_repass" ForeColor="#FF3300"></asp:CompareValidator>
@@ -59,7 +59,7 @@
                         <span class="x-red">*</span>手机
                     </label>
                     <div class="layui-input-inline">
-                        <input type="text" id="phone" name="phone" required="" lay-verify="phone"
+                        <input type="text" id="phone" name="phone" lay-verify="phone"
                             autocomplete="off" class="layui-input" runat="server">
                     </div>
                     <div class="layui-form-mid layui-word-aux">
@@ -70,6 +70,10 @@
                       <label for="L_repass" class="layui-form-label">
                       </label>
                     <asp:Button ID="btnsave" runat="server" Text="添加" CssClass="layui-btn" OnClick="btnsave_Click" />
+                      <br />
+                      <asp:FileUpload ID="Filadmin" runat="server" />
+                      <asp:Button ID="btnin" runat="server" Text="确认导入" OnClick="btnin_Click" />
+                      <asp:Label ID="lb1" runat="server" Text=""></asp:Label>
                 </div>
                 
             </form>

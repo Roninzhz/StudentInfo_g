@@ -63,25 +63,17 @@ namespace StudentInfo
                 case "del"://删除用户
                     dal.Deladmin_user(int.Parse(Id));
                     LoadData();//重新加载数据，验证是否成功删除
-                    ShowInfo("数据删除成功！");
+                    Response.Write("<script>alert('数据删除成功！')</script>");
                     break;
                 case "reset"://修改密码
                     admin_userEntity admin = dal.Getadmin_user(int.Parse(Id));
                     admin.UserPassword = "123456";
                     dal.Modadmin_user(admin);
                     LoadData();//重新加载数据，验证是否重置
-                    ShowInfo("用户密码重置成功，新密码123456");
+                    Response.Write("<script>alert('用户密码重置成功，新密码123456')</script>");
                     break;
-
             }
         }
-
-        public void ShowInfo(string message)
-        {
-            //this.Page.RegisterStartupScript("a", "<script>" + message + "</script>");
-            ClientScript.RegisterStartupScript(GetType(), "", "<script>"+message+"</script>");
-        }
-
         protected void btnselect_Click(object sender, EventArgs e)
         {
             LoadData();
