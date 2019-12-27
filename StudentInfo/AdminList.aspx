@@ -39,6 +39,7 @@
                             </div>
                             <div class="layui-inline layui-show-xs-block">
                                 <asp:Button ID="btnselect" runat="server" CssClass="layui-btn" Text="查找" OnClick="btnselect_Click"></asp:Button>
+                                <asp:Button ID="btnout" runat="server" CssClass="layui-btn" Text="导出数据" OnClick="btnout_Click"></asp:Button>
                             </div>
                         </div>
                         <div class="layui-card-body ">
