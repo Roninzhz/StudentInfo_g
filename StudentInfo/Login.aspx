@@ -1,49 +1,75 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="StudentInfo.Login" %>
 
 <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/skin_/login.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.select.js"></script>
+<title>教务管理系统_用户登录</title>
+</head>
 
-<html xmlns="http://www.w3.org/1999/xhtml" class="x-admin-sm">
-<head runat="server">
-    <meta charset="UTF-8" />
-    <title>学生成绩管理系统</title>
-    <meta name="renderer" content="webkit|ie-comp|ie-stand" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <link rel="stylesheet" href="./css/font.css" />
-    <link rel="stylesheet" href="./css/login.css" />
-    <link rel="stylesheet" href="./css/xadmin.css" />
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./lib/layui/layui.js" charset="utf-8"></script>
-    </head>
-<body class="login-bg">
-    <div class="login layui-anim layui-anim-up">
-        <div class="message">用户登录</div>
-        <div id="darkbannerwrap"></div>
-
-        <form method="post" class="layui-form" runat="server">
-            <input name="username" placeholder="用户名" type="text" lay-verify="required" class="layui-input" id="user_name" runat="server" />
-            <hr class="hr15" />
-            <input name="password" lay-verify="required" placeholder="密码" type="password" class="layui-input" id="pass_word" runat="server" />
-            <hr class="hr15" />
-            <input name="code" lay-verify="required" placeholder="验证码" class="layui-input" id="CheckCode" runat="server" style="width: 200px" />
-            <div style="position: relative; left: 200px; top: -50px;">
-                <asp:Image ID="Image" runat="server" ImageUrl="~/CheckCode.aspx" Width="100px" Height="40px" /><br />
-                <br />
-                <asp:Label ID="shuaxin" runat="server" Text="看不清，单击验证码换一张"></asp:Label>
+<body>
+    <form runat="server">
+        <div id="container" runat="server">
+    <div id="bd" runat="server">
+    	<div id="main" runat="server">
+        	<div class="login-box" runat="server">
+                <div id="logo"></div>
+                
+                <div class="input username" id="username" runat="server">
+                    <label for="userName">用户名</label>
+                    <span></span>
+                    <input type="text" id="uName" runat="server" />
+                </div>
+                <div class="input psw" id="psw" runat="server">
+                    <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    <span></span>
+                    <input type="password" id="uPassword" runat="server" />
+                </div>
+                <div class="input validate" id="validate" runat="server">
+                    <label for="valiDate">验证码</label>
+                    <input type="text" id="vcode" runat="server" />
+                    <div class="value">
+                        <asp:Label ID="lblCode" runat="server"></asp:Label>
+                    </div>
+                </div>
+                <div class="styleArea">
+                    <div class="styleWrap">
+                        <asp:DropDownList ID="style" runat="server">
+                            <asp:ListItem Value="0" Text="用户类型"></asp:ListItem>
+                            <asp:ListItem Value="1" Text="管理员"></asp:ListItem>
+                            <asp:ListItem Value="2" Text="学生"></asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div id="btn" class="loginButton" runat="server">
+                    <asp:Button ID="btnLogin" runat="server" Text="登录"  OnClick="btnLogin_Click" ForeColor="Black" />
+                </div>
             </div>
-            <hr class="hr15" />
-            <asp:Button ID="btnsubmit" runat="server" Text="教师登录" OnClick="btnsubmit_Click" Width="150px" />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnsubmit1" runat="server" Text="学生登录" Width="150px" OnClick="btnsubmit1_Click"/>
-            <hr class="hr20" />
-        </form>
+        </div>
     </div>
-    <!-- 底部结束 -->
-    <script type="text/javascript">
-        $("#Image").click(function () {
-            $(this).attr("src", "CheckCode.aspx?code=" + (new Date()).getTime());
-        });
-    </script>
+   
+</div>
+    </form>
+
 </body>
+<script type="text/javascript">
+	var height = $(window).height() > 445 ? $(window).height() : 445;
+	$("#container").height(height);
+	var bdheight = ($(window).height() - $('#bd').height()) / 2 - 20;
+	$('#bd').css('padding-top', bdheight);
+	$(window).resize(function(e) {
+        var height = $(window).height() > 445 ? $(window).height() : 445;
+		$("#container").height(height);
+		var bdheight = ($(window).height() - $('#bd').height()) / 2 - 20;
+		$('#bd').css('padding-top', bdheight);
+    });
+	$('select').select();
+</script>
+
 </html>
+

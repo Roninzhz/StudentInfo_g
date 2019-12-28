@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="stylesheet" href="./css/font.css" />
+    <link href="css/theme2.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/xadmin.css" />
-    <link rel="stylesheet" href="./css/theme5.css" />
     <script src="./lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -80,7 +80,7 @@
                     </dl>
                 </li>
                 <li class="layui-nav-item to-index">
-                    <a href="/">前台首页</a></li>
+                    <a href="">前台首页</a></li>
             </ul>
         </div>
         <!-- 顶部结束 -->
@@ -98,7 +98,7 @@
                             <%--二级列表--%>
                         </ul>
                     </li>
-                 <%--<li>
+                 <li>
                         <a href="javascript:;">
                             <i class="iconfont">&#xe70b;</i>
                             <cite>学生管理</cite>
@@ -128,25 +128,41 @@
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('课程成绩添加','cate.html')">
+                                <a onclick="xadmin.add_tab('添加课程','CourseAdd.aspx')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>多级分类</cite></a>
+                                    <cite>添加课程</cite></a>
+                            </li>
+                            
+                            <li>
+                                <a onclick="xadmin.add_tab('查看课程','CourseScore.aspx')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>查看课程</cite></a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:;">
                             <i class="iconfont left-nav-li">&#xe723;</i>
-                            <cite>通知管理</cite>
+                            <cite>新闻管理</cite>
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">
                             <li>
-                                <a onclick="xadmin.add_tab('三级地区联动','city.html')">
+                                <a onclick="xadmin.add_tab('新闻列表','NewsList.aspx')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>三级地区联动</cite></a>
+                                    <cite>新闻列表</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('新闻编写','NewsManage.aspx')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>新闻编写</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('新闻一览','NewsShow.aspx')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>新闻一览</cite></a>
                             </li>
                         </ul>
-                    </li>--%>
+                    </li>
                     <li>
                         <a href="javascript:;">
                             <i class="iconfont left-nav-li">&#xe726;</i>

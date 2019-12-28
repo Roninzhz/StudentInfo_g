@@ -4,8 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Model;
+
 using SQLDAL;
+using Model;
 
 namespace StudentInfo
 {
@@ -13,45 +14,86 @@ namespace StudentInfo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            GenerateCode();
         }
 
-        protected void btnsubmit_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
             HttpCookie cookie = Request.Cookies["CheckCode"];
-            string username = user_name.Value;
-            string password = pass_word.Value;
-            SQLDAL.DALadmin_user dALadmin_User = new DALadmin_user();
-            SQLDAL.DALstudent_info dALstudent_Info = new DALstudent_info();
-            IList<student_infoEntity> students = dALstudent_Info.Getstudent_infosbyCondition("studentName='" + username + "' and StudentPassword='" + password + "'");
-            IList<admin_userEntity> users = dALadmin_User.Getadmin_usersbyCondition("userName='" + username + "' and userPassword='" + password + "'");
-            if (users.Count > 0&& cookie.Value == CheckCode.Value)
+            string uname = uName.Value;
+            string pwd = uPassword.Value;
+            Session["uName"] = uname;
+            if (style.SelectedItem.Text=="管理员")
             {
-                Session["uName"] = "你好，管理员："+username;
-                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登录成功');location.href='index.aspx';</script>");
+                DALadmin_user dal = new DALadmin_user();//定义一个admin_user表的对象
+                IList<admin_userEntity> users = dal.Getadmin_usersbyCondition("userName='" + uname + "'and userPassword='" + pwd + "'");
+
+                if (users.Count > 0)//查找表中是否有相关的记录
+                {
+                    
+                    if (cookie.Value == vcode.Value)
+                    {
+                        ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登陆成功！');location.href='index.aspx';</script>");
+                    }
+                    else
+                        ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('验证码错误！');</script>");
+                }
+                else
+                {
+                    this.Page.RegisterStartupScript("", "<script>alert('登陆失败!');</script>");
+                }
+            }
+            else if(style.SelectedItem.Text=="学生")
+            {
+                DALstudent_info dal = new DALstudent_info();
+                IList<student_infoEntity> users= dal.Getstudent_infosbyCondition("StudentId='" + uname + "'and studentPassword='" + pwd + "'");
+                if (users.Count > 0)//查找表中是否有相关的记录
+                {
+                    if (cookie.Value == vcode.Value)
+                    {
+                        ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登陆成功！');</script>");
+                    }
+                    else
+                        ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('验证码错误！');</script>");
+                }
+                else
+                {
+                    this.Page.RegisterStartupScript("", "<script>alert('登陆失败!');</script>");
+                }
             }
             else
             {
-                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名或密码或验证码错误');</script>");
+                this.Page.RegisterStartupScript("", "<script>alert('请先选择用户类型！');</script>");
             }
+
         }
 
-        protected void btnsubmit1_Click(object sender, EventArgs e)
+        private void GenerateCode()
         {
-            HttpCookie cookie = Request.Cookies["CheckCode"];
-            string username = user_name.Value;
-            string password = pass_word.Value;
-            SQLDAL.DALstudent_info dALstudent_Info = new DALstudent_info();
-            IList<student_infoEntity> students = dALstudent_Info.Getstudent_infosbyCondition("studentName='" + username + "' and StudentPassword='" + password + "'");
-            if (students.Count> 0 && cookie.Value == CheckCode.Value)
+            int num;
+            char code;
+            string checkCode = String.Empty;
+            //定义随机变量
+            Random random = new Random();
+            //随机产生4个随机字母或数字
+            for (int i = 0; i < 4; i++)
             {
-                Session["uName"] = "学生：" + username;
-                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登录成功');location.href='index.aspx';</script>");
+                num = random.Next();
+
+                if (i % 2 != 0)
+                {
+                    code = (char)('0' + (char)(num % 10));//2，4位上产生数字
+                }
+                else
+                {
+                    code = (char)('A' + (char)(num % 26));//1，3位上产生字母
+                }
+
+                checkCode += code;
             }
-            else
-            {
-                ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('用户名或密码或验证码错误');</script>");
-            }
+            lblCode.Text = checkCode.ToString();
+            Response.Cookies.Add(new HttpCookie("CheckCode", checkCode));
         }
+
     }
 }

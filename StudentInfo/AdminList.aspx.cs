@@ -59,7 +59,7 @@ namespace StudentInfo
             switch (e.CommandName)//获取操作对象的命令
             {
                 case "edit"://调转到编辑页面
-                    Response.Redirect("AdminEdit.aspx?id=" + Id);
+                    Response.Redirect("StudentAdd.aspx?id=" + Id);
                     break;
                 case "del"://删除用户
                     dal.Deladmin_user(int.Parse(Id));
