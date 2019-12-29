@@ -67,6 +67,7 @@
     <Content Include="CourseFind.aspx" />
     <Content Include="CourseScore.aspx" />
     <Content Include="CourseSelect.aspx" />
+    <Content Include="css\style.css" />
     <Content Include="fonts\iconfont.eot" />
     <Content Include="fonts\iconfont.ttf" />
     <Content Include="fonts\iconfont.woff" />
