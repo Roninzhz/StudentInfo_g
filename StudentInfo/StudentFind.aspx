@@ -31,6 +31,14 @@
                 <div class="layui-card">
                     <form class="layui-form layui-col-space5" runat="server">
                         <div class="layui-card-body ">
+                            <div class="layui-inline layui-show-xs-block">
+                                <input type="text" name="username" placeholder="请输入要查找的账户" class="layui-input" id="select" runat="server" />
+                            </div>
+                            <div class="layui-inline layui-show-xs-block">
+                                <asp:Button ID="btnselect" runat="server" CssClass="layui-btn" Text="查找" OnClick="btnselect_Click"></asp:Button>
+                            </div>
+                        </div>
+                        <div class="layui-card-body ">
                         </div>
                         <div class="layui-card-body ">
                             <asp:GridView ID="grdusers" runat="server" AutoGenerateColumns="False" DataKeyNames="Id"
@@ -57,18 +65,8 @@
                             </asp:GridView>
                             <asp:SqlDataSource ID="Sqladmin" runat="server" ConnectionString="<%$ ConnectionStrings:SMDB %>" SelectCommand="SELECT * FROM [admin_user]"></asp:SqlDataSource>
                         </div>
-                        <div class="layui-card-body ">
-                            <div class="layui-inline layui-show-xs-block">
-                                <input type="text" name="username" placeholder="请输入要查找的账户" class="layui-input" id="select" runat="server" />
-                            </div>
-                            <div class="layui-inline layui-show-xs-block">
-                                <asp:Button ID="btnselect" runat="server" CssClass="layui-btn" Text="查找" OnClick="btnselect_Click"></asp:Button>
-                               
-                            </div>
-                        </div>
-                </div>
-                    </form>
-                    
+                        </form>
+                </div>                
             </div>
         </div>
     </div>

@@ -59,19 +59,19 @@ namespace StudentInfo
             switch (e.CommandName)//获取操作对象的命令
             {
                 case "edit"://调转到编辑页面
-                    Response.Redirect("StudentAdd.aspx?id=" + Id);
+                    //Response.Redirect("StudentAdd.aspx?id=" + Id);
                     break;
                 case "del"://删除用户
                     dal.Deladmin_user(int.Parse(Id));
                     LoadData();//重新加载数据，验证是否成功删除
-                    Response.Write("<script>alert('数据删除成功！')</script>");
+                    ///Response.Write("<script>alert('数据删除成功！')</script>");
                     break;
                 case "reset"://修改密码
                     admin_userEntity admin = dal.Getadmin_user(int.Parse(Id));
                     admin.UserPassword = "123456";
                     dal.Modadmin_user(admin);
                     LoadData();//重新加载数据，验证是否重置
-                    Response.Write("<script>alert('用户密码重置成功，新密码123456')</script>");
+                    //Response.Write("<script>alert('用户密码重置成功，新密码123456')</script>");
                     break;
             }
         }
@@ -82,11 +82,13 @@ namespace StudentInfo
 
         protected void btnout_Click(object sender, EventArgs e)
         {
+            this.grdadmin.Columns[4].Visible = false;
             Response.Clear();
             Response.AddHeader("content-disposition",
             "attachment;filename=管理员列表.xls");
             Response.Charset = "gb2312";
             Response.ContentType = "application/vnd.xls";
+            Response.ContentEncoding = System.Text.Encoding.Default;
             System.IO.StringWriter stringWrite = new System.IO.StringWriter();
             System.Web.UI.HtmlTextWriter htmlWrite =
             new HtmlTextWriter(stringWrite);
