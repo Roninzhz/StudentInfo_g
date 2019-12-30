@@ -19,18 +19,18 @@
             <table class="auto-style1">
                 <tr>
                     <td>
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CourseName" DataValueField="CourseId" AutoPostBack="True">
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CourseName" DataValueField="CourseId" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:GridView ID="grdCourse" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="grdCourse_SelectedIndexChanged">
+                        <asp:GridView ID="grdCourse" DataKeyNames="Id" runat="server" AutoGenerateColumns="False">
                             <Columns>
                                 <asp:BoundField HeaderText="学号" DataField="StudentId" />
                                 <asp:TemplateField HeaderText="成绩">
                                     <ItemTemplate>
-                                        <asp:TextBox ID="txtCourse" Text="" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="txtCourse" Text="" runat="server" TextMode="SingleLine"></asp:TextBox>
                                     </ItemTemplate>
                                 </asp:TemplateField>
                             </Columns>

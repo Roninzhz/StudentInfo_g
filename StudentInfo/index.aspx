@@ -128,9 +128,13 @@
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>添加课程</cite></a>
                             </li>
-                            
                             <li>
-                                <a onclick="xadmin.add_tab('查看课程','CourseScore.aspx')">
+                                <a onclick="xadmin.add_tab('录入成绩','CourseScore.aspx')">
+                                    <i class="iconfont">&#xe6a7;</i>
+                                    <cite>录入成绩</cite></a>
+                            </li>
+                            <li>
+                                <a onclick="xadmin.add_tab('查看课程','CourseList.aspx')">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>查看课程</cite></a>
                             </li>
