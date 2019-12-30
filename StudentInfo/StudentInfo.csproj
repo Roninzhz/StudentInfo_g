@@ -29,7 +29,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>2</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -203,9 +203,11 @@
     <Content Include="lib\layui\lay\modules\upload.js" />
     <Content Include="lib\layui\lay\modules\util.js" />
     <Content Include="Login.aspx" />
+    <Content Include="NewsEdit.aspx" />
     <Content Include="NewsList.aspx" />
     <Content Include="NewsManage.aspx" />
     <Content Include="NewsShow.aspx" />
+    <Content Include="NewsWrite.aspx" />
     <Content Include="PasswordMod.aspx" />
     <Content Include="student.aspx" />
     <Content Include="StudentAdd.aspx" />
@@ -284,6 +286,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewsEdit.aspx.cs">
+      <DependentUpon>NewsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsEdit.aspx.designer.cs">
+      <DependentUpon>NewsEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="NewsList.aspx.cs">
       <DependentUpon>NewsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -304,6 +313,13 @@
     </Compile>
     <Compile Include="NewsShow.aspx.designer.cs">
       <DependentUpon>NewsShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NewsWrite.aspx.cs">
+      <DependentUpon>NewsWrite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewsWrite.aspx.designer.cs">
+      <DependentUpon>NewsWrite.aspx</DependentUpon>
     </Compile>
     <Compile Include="PasswordMod.aspx.cs">
       <DependentUpon>PasswordMod.aspx</DependentUpon>

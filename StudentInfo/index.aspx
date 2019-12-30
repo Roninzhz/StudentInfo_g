@@ -152,14 +152,14 @@
                                     <cite>新闻列表</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('新闻编写','NewsManage.aspx')">
+                                <a onclick="xadmin.add_tab('新闻管理','NewsManage.aspx')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>新闻编写</cite></a>
+                                    <cite>新闻管理</cite></a>
                             </li>
                             <li>
-                                <a onclick="xadmin.add_tab('新闻一览','NewsShow.aspx')">
+                                <a onclick="xadmin.add_tab('新闻编写','NewsWrite.aspx')">
                                     <i class="iconfont">&#xe6a7;</i>
-                                    <cite>新闻一览</cite></a>
+                                    <cite>新闻编写</cite></a>
                             </li>
                         </ul>
                     </li>

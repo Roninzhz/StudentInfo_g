@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewsShow.aspx.cs" Inherits="StudentInfo.NewsShow" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="NewsEdit.aspx.cs" Inherits="StudentInfo.NewsEdit" %>
 
 <!DOCTYPE html>
 
@@ -25,21 +25,39 @@
         <a class="layui-btn layui-btn-small" style="line-height: 1.6em; margin-top: 3px; float: right" onclick="javascript:history.back(-1);" title="刷新">
             <i class="layui-icon layui-icon-refresh" style="line-height: 30px"></i></a>
     </div>
-    <div>
+    <div class="auto-style1">
         <div class="layui-row">
             <form method="post" class="layui-form layui-form-pane" runat="server">
+
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">
+                        新闻标题
+                    </label>
+                    <table class="layui-table layui-input-block">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <textarea placeholder="请输入标题" id="desc1" name="desc" class="layui-textarea" runat="server"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="layui-form-item layui-form-text">
                     <label for="desc" class="layui-form-label">
                         新闻内容
                     </label>
                     <div class="layui-input-block">
-                        <textarea placeholder="" id="desc" name="desc" class="layui-textarea" runat="server" readonly="readonly"></textarea>
+                        <textarea placeholder="请输入内容" id="desc" name="desc" class="layui-textarea" runat="server"></textarea>
                     </div>
                 </div>
-
+                <div class="layui-form-item">
+                    <asp:Button ID="submit" runat="server" Text="提交" CssClass="layui-btn" OnClick="submit_Click" />
+                </div>
             </form>
         </div>
     </div>
 </body>
 </html>
-
