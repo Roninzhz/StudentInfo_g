@@ -41,6 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -62,9 +63,9 @@
     <Content Include="AdminAdd.aspx" />
     <Content Include="AdminEdit.aspx" />
     <Content Include="AdminList.aspx" />
-    <Content Include="CheckCode.aspx" />
     <Content Include="CourseAdd.aspx" />
     <Content Include="CourseFind.aspx" />
+    <Content Include="CourseList.aspx" />
     <Content Include="CourseScore.aspx" />
     <Content Include="CourseSelect.aspx" />
     <Content Include="css\style.css" />
@@ -206,6 +207,7 @@
     <Content Include="NewsManage.aspx" />
     <Content Include="NewsShow.aspx" />
     <Content Include="PasswordMod.aspx" />
+    <Content Include="student.aspx" />
     <Content Include="StudentAdd.aspx" />
     <Content Include="StudentFind.aspx" />
     <Content Include="StudentInfo.aspx" />
@@ -233,13 +235,6 @@
     <Compile Include="AdminList.aspx.designer.cs">
       <DependentUpon>AdminList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CheckCode.aspx.cs">
-      <DependentUpon>CheckCode.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CheckCode.aspx.designer.cs">
-      <DependentUpon>CheckCode.aspx</DependentUpon>
-    </Compile>
     <Compile Include="CourseAdd.aspx.cs">
       <DependentUpon>CourseAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -253,6 +248,13 @@
     </Compile>
     <Compile Include="CourseFind.aspx.designer.cs">
       <DependentUpon>CourseFind.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseList.aspx.cs">
+      <DependentUpon>CourseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseList.aspx.designer.cs">
+      <DependentUpon>CourseList.aspx</DependentUpon>
     </Compile>
     <Compile Include="CourseScore.aspx.cs">
       <DependentUpon>CourseScore.aspx</DependentUpon>
@@ -311,6 +313,13 @@
       <DependentUpon>PasswordMod.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="student.aspx.cs">
+      <DependentUpon>student.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student.aspx.designer.cs">
+      <DependentUpon>student.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StudentAdd.aspx.cs">
       <DependentUpon>StudentAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -345,6 +354,9 @@
       <Project>{46b95c4c-0d22-4262-add1-6aebadaae8f7}</Project>
       <Name>SQLDAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

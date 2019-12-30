@@ -6,10 +6,44 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 800px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <table class="auto-style1">
+                <tr>
+                    <td>
+                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="CourseName" DataValueField="CourseId" AutoPostBack="True">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:GridView ID="grdCourse" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="grdCourse_SelectedIndexChanged">
+                            <Columns>
+                                <asp:BoundField HeaderText="学号" DataField="StudentId" />
+                                <asp:TemplateField HeaderText="成绩">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="txtCourse" Text="" runat="server"></asp:TextBox>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:connStr %>" SelectCommand="SELECT [Id], [CourseId], [CourseName] FROM [course]"></asp:SqlDataSource>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Button ID="btnOK" runat="server" Text="录入" OnClick="btnOK_Click"/>
+                    </td>
+                </tr>
+            </table>
         </div>
     </form>
 </body>

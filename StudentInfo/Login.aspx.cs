@@ -51,7 +51,7 @@ namespace StudentInfo
                 {
                     if (cookie.Value == vcode.Value)
                     {
-                        ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登陆成功！');</script>");
+                        ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('登陆成功！');location.href='student.aspx';</script>");
                     }
                     else
                         ClientScript.RegisterStartupScript(GetType(), "", "<script>alert('验证码错误！');</script>");

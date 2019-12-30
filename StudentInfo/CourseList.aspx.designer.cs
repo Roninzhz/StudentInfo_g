@@ -11,34 +11,25 @@ namespace StudentInfo
 {
 
 
-    public partial class StudentFind
+    public partial class CourseList
     {
 
         /// <summary>
-        /// form1 控件。
+        /// grdCourse 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.GridView grdCourse;
 
         /// <summary>
-        /// btnout 控件。
+        /// SqlCourse 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnout;
-
-        /// <summary>
-        /// grdusers 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grdusers;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlCourse;
     }
 }

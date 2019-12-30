@@ -59,7 +59,7 @@
                                     </asp:TemplateField>
                                 </Columns>
                             </asp:GridView>
-                            <asp:SqlDataSource ID="Sqladmin" runat="server" ConnectionString="<%$ ConnectionStrings:SMDB %>" SelectCommand="SELECT * FROM [admin_user]"></asp:SqlDataSource>
+                            <asp:SqlDataSource ID="Sqladmin" runat="server" ConnectionString="<%$ ConnectionStrings:connStr %>" SelectCommand="SELECT * FROM [student_info]"></asp:SqlDataSource>
                         </div>
                         <div class="layui-card-body ">
                             <div class="layui-inline layui-show-xs-block">
